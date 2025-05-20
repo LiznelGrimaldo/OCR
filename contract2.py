@@ -13,7 +13,7 @@ st.set_page_config(
 # Sidebar: Configuration
 st.sidebar.header("🔧 Configuration")
 ocr_api_url = "https://ocr-api-03n6.onrender.com/upload-pdf/"
-webhook_url = "https://n8n.sofiatechnology.ai/webhook-test/480b1d1a-d58f-498f-997f-304cf50253ac"
+webhook_url = "https://n8n.sofiatechnology.ai/webhook/480b1d1a-d58f-498f-997f-304cf50253ac"
 
 # ───────────────────────────────────────────────────────────────
 # Main header
