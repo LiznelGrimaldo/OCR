@@ -1,0 +1,8 @@
+streamlit
+pandas
+gspread
+oauth2client
+Pillow
+google-auth
+google-auth-oauthlib
+datetime
