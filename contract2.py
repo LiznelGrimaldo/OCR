@@ -4,7 +4,7 @@ import requests
 # ───────────────────────────────────────────────────────────────
 # Page Config
 st.set_page_config(
-    page_title="OCR & Invoice Comparator",
+    page_title="OCR & Purchases Order Comparator",
     page_icon="🤖",
     layout="wide"
 )
@@ -19,8 +19,8 @@ webhook_url = "https://n8n.sofiatechnology.ai/webhook/480b1d1a-d58f-498f-997f-30
 # Main header
 st.markdown(
     """
-    # 🤖 PDF OCR & Invoice Comparator Dashboard
-    Upload two invoices, run OCR, and get policy-vs-client analysis in one place.
+    # 🤖 PDF OCR & Purchases Order Comparator Dashboard
+    Upload two Documents, run OCR, and get Purchase Order-vs-Order Confirmation in one place.
     ---
     """,
     unsafe_allow_html=True
@@ -36,9 +36,9 @@ if "ocr_texts" not in st.session_state:
 # File upload area
 col1, col2 = st.columns(2)
 with col1:
-    pdf1 = st.file_uploader("📄 Upload Invoice #1 (Client)", type="pdf", key="pdf1")
+    pdf1 = st.file_uploader("📄 Upload Purchase Order", type="pdf", key="pdf1")
 with col2:
-    pdf2 = st.file_uploader("📄 Upload Invoice #2 (Policy)", type="pdf", key="pdf2")
+    pdf2 = st.file_uploader("📄 Upload Order Confirmation", type="pdf", key="pdf2")
 
 # ───────────────────────────────────────────────────────────────
 # Process button
@@ -46,7 +46,7 @@ process_col, _ = st.columns([1, 3])
 with process_col:
     if st.button("▶️ Start Processing", use_container_width=True):
         if not (pdf1 and pdf2):
-            st.error("Please upload both PDF invoices.")
+            st.error("Please upload both PDF Documents.")
         else:
             # Clear previous data
             st.session_state["messages"].clear()
